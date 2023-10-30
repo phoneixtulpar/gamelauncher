@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net48;net60;net70</TargetFrameworks>
+    <SignAssembly>false</SignAssembly>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Title>GameLauncherCore</Title>
+    <Version>1.0.3</Version>
+    <Authors>Carlos Arturo Rodriguez Silva</Authors>
+    <Description>Create patches for your game or app</Description>
+    <PackageProjectUrl>https://game-launcher.net/</PackageProjectUrl>
+    <PackageTags>Launcher, Patcher, Updater</PackageTags>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <Copyright>https://game-launcher.net/</Copyright>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,160 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <PublishSingleFile>true</PublishSingleFile>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <TargetFramework>net70-windows</TargetFramework>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <SelfContained>true</SelfContained>
+    <DebugType>embedded</DebugType>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+    <StartupObject></StartupObject>
+    <NoWin32Manifest>true</NoWin32Manifest>
+    <Version>1.0.0</Version>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <UseWindowsForms>false</UseWindowsForms>
+    <!--<TargetPlatformVersion>10.0.18362.0</TargetPlatformVersion>-->
+    <CefSharpAnyCpuSupport>true</CefSharpAnyCpuSupport>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Prefer32Bit>true</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <Prefer32Bit>true</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Icons\Navigation\navigation_external_link.png" />
+    <None Remove="Resources\Images\Examples\example_logo_game_launcher.png" />
+    <None Remove="Resources\Images\Launcher Images\application_icon.png" />
+  </ItemGroup>
+  
+    <ItemGroup>
+      <PackageReference Include="FluentWPF" Version="0.10.2" />
+    <PackageReference Include="FontAwesome.Sharp" Version="6.3.0" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1901.177" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+    <PackageReference Include="MyToolkit" Version="2.5.16" />
+    <PackageReference Include="MyToolkit.Extended" Version="2.5.16" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Runtime.Caching" Version="7.0.0" />
+    <PackageReference Include="System.Text.Json" Version="7.0.2" />
+    <PackageReference Include="WindowsAPICodePack" Version="7.0.4" />
+    <PackageReference Include="XamlRadialProgressBar" Version="1.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GameLauncherCore\GameLauncherCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Fonts\Dosis.ttf" />
+    <Resource Include="Resources\Fonts\Fredoka.ttf" />
+    <Resource Include="Resources\Icons\Actions\action_add_game.png" />
+    <Resource Include="Resources\Icons\Actions\action_arrow_down_black.png" />
+    <Resource Include="Resources\Icons\Actions\action_arrow_down.png" />
+    <Resource Include="Resources\Icons\Actions\action_repair_white.png" />
+    <Resource Include="Resources\Icons\Actions\action_uninstall_color.png" />
+    <Resource Include="Resources\Icons\Actions\action_uninstall_white.png" />
+    <Resource Include="Resources\Icons\Navigation\navigation_bug_color.png" />
+    <Resource Include="Resources\Icons\Navigation\navigation_external_link.png" />
+    <Resource Include="Resources\Icons\Navigation\navigation_preferences_white.png" />
+    <Resource Include="Resources\Icons\Others\bug_white.png" />
+    <Resource Include="Resources\Icons\Navigation\navigation_bug.png" />
+    <Resource Include="Resources\Icons\Actions\action_clear.png" />
+    <Resource Include="Resources\Icons\Status\status_download.png" />
+    <Resource Include="Resources\Icons\Status\status_error.png" />
+    <Resource Include="Resources\Icons\Status\status_favorite.png" />
+    <Resource Include="Resources\Icons\Status\status_favorite_unchecked.png" />
+    <Resource Include="Resources\Images\Examples\example_cover_game_launcher.png" />
+    <Resource Include="Resources\Images\Examples\example_cover_lynium.png" />
+    <Resource Include="Resources\Icons\Others\discord_logo.png" />
+    <Resource Include="Resources\Icons\Navigation\navigation_explorer.png" />
+    <Resource Include="Resources\Icons\Navigation\navigation_explorer_color.png" />
+    <Resource Include="Resources\Images\Examples\example_icon_lynium.png" />
+    <Resource Include="Resources\Images\Examples\example_icon_game_launcher.png" />
+    <Resource Include="Resources\Images\Examples\example_logo_game_launcher.png" />
+    <Resource Include="Resources\Images\Examples\example_logo_lynium.png" />
+    <Resource Include="Resources\Images\Examples\subnews_game_launcher.png" />
+    <Resource Include="Resources\Images\Game Launcher Logos\Game Launcher - 2K Full Logo with Background.png" />
+    <Resource Include="Resources\Images\Game Launcher Logos\Game Launcher - Full Logo with Shadow.png" />
+    <Resource Include="Resources\Images\Game Launcher Logos\Game Launcher - Full Logo.png" />
+    <Resource Include="Resources\Images\Game Launcher Logos\Game Launcher - Square Full Logo with Background.png" />
+    <Resource Include="Resources\Icons\Status\status_completed.png" />
+    <Resource Include="Resources\Icons\Navigation\navigation_layouts.png" />
+    <Resource Include="Resources\Icons\Actions\action_search.png" />
+    <Resource Include="Resources\Images\Launcher Images\application_icon.png" />
+    <SplashScreen Include="Resources\Images\Game Launcher Logos\Game Launcher - Logo with Shadow Small.png" />
+    <Resource Include="Resources\Images\Game Launcher Logos\Game Launcher - Logo with Shadow.png" />
+    <Resource Include="Resources\Images\Game Launcher Logos\Game Launcher - Logo.png" />
+    <Resource Include="Resources\Images\Game Launcher Logos\Game Launcher Logo New.png" />
+    <Resource Include="Resources\Images\Game Launcher Logos\Game Launcher Logo Only.png" />
+    <Resource Include="Resources\Images\Game Launcher Logos\Game Launcher Logo Text.png" />
+    <Resource Include="Resources\Images\Game Launcher Logos\Game Launcher Photo.png" />
+    <Resource Include="Resources\Icons\Navigation\navigation_globe.png" />
+    <Resource Include="Resources\Icons\Status\status_information_black.png" />
+    <Resource Include="Resources\Icons\Actions\action_pause_white.png" />
+    <Resource Include="Resources\Icons\Actions\action_pause.png" />
+    <Resource Include="Resources\Icons\Actions\action_play.png" />
+    <Resource Include="Resources\Icons\Actions\action_play_white.png" />
+    <Resource Include="Resources\Icons\Actions\action_refresh_white.png" />
+    <Resource Include="Resources\Icons\Actions\action_refresh.png" />
+    <Resource Include="Resources\Images\Game Launcher Logos\Game Launcher Logo White.png" />
+    <Resource Include="Icon.ico" />
+    <Resource Include="Resources\Icons\Actions\action_repair_color.png" />
+    <Resource Include="Resources\Icons\Actions\action_repair.png" />
+    <Resource Include="Resources\Icons\Navigation\navigation_settings_white.png" />
+    <Resource Include="Resources\Icons\Navigation\navigation_settings_white_border.png" />
+    <Resource Include="Resources\Icons\Navigation\navigation_settings.png" />
+    <Resource Include="Resources\Icons\Others\twitter_logo.png" />
+    <Resource Include="Resources\Icons\Status\status_under_construction.png" />
+    <Resource Include="Resources\Icons\Status\status_warning_black.png" />
+    <Resource Include="Resources\Icons\Status\status_warning.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms">
+      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\Framework64\v2.0.50727\System.Windows.Forms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewsModels\" />
+  </ItemGroup>
+
+</Project>

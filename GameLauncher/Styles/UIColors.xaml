@@ -1,0 +1,43 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+   
+         <!--Color Palette-->
+        <SolidColorBrush x:Key="color1" Color="Black"/>
+        <SolidColorBrush x:Key="color2" Color="White"/>
+        <SolidColorBrush x:Key="color3" Color="Gray"/>
+        <SolidColorBrush x:Key="color4" Color="#FB539B"/>
+        <SolidColorBrush x:Key="color5" Color="#7E82FC"/>
+        <SolidColorBrush x:Key="color6" Color="#FFC047"/>
+        <SolidColorBrush x:Key="color7" Color="#EF6C96"/>
+        <SolidColorBrush x:Key="color8" Color="#78A3FC"/>
+        <SolidColorBrush x:Key="color9" Color="#07F3C0"/>
+        <SolidColorBrush x:Key="color10" Color="#FBA1AA"/>
+        <!--Font Colors-->
+        <SolidColorBrush x:Key="titleColor1" Color="#E0E1F1"/>
+        <SolidColorBrush x:Key="titleColor2" Color="#D5CFF5"/>
+        <SolidColorBrush x:Key="titleColor3" Color="#BCBEE0"/>
+        <SolidColorBrush x:Key="plainTextColor1" Color="#FFFFFF"/>
+        <SolidColorBrush x:Key="plainTextColor2" Color="#DBDBDB"/>
+        <SolidColorBrush x:Key="plainTextColor3" Color="#CCCCCC"/>
+        <!--Panel Colors-->
+        <SolidColorBrush x:Key="panelColor" Color="#FF616161"/>
+        <SolidColorBrush x:Key="panelOverColor" Color="#575B65"/>
+        <SolidColorBrush x:Key="panelActiveColor" Color="#FF616161"/>
+        <!--Button Colors-->
+        <SolidColorBrush x:Key="buttonColor1" Color="#313339"/>
+        <SolidColorBrush x:Key="buttonColor2" Color="#0F0F0F"/>
+        <!--Button Highlight-->
+        <SolidColorBrush x:Key="buttonHighlightColor1" Color="#FF246C62"/>
+        <!--Etc-->
+
+    <Style x:Key="MainNavigationTextStyle" TargetType="{x:Type TextBlock}">
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="False">
+                <Setter Property="Foreground" Value="White"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="Gray"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

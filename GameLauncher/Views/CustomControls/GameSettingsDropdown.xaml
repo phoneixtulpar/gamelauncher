@@ -1,0 +1,36 @@
+﻿<UserControl  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:uc="clr-namespace:GameLauncher.Controls"
+             xmlns:GameLauncher="clr-namespace:GameLauncher" 
+             x:Class="GameLauncher.Controls.GameSettingsDropdown"
+             mc:Ignorable="d" 
+             d:DesignWidth="50" d:DesignHeight="64"
+             >
+
+    <Grid x:Name="AppConfigButtonContent">
+        <Button Style="{DynamicResource NormalButtonStyle}" x:Name = "AppConfigButton" ToolTip="App Settings" RenderTransformOrigin="0.5,0.5" BorderThickness="2,2,2,2" Width="NaN" Height="Auto" Padding="1,1,1,1" Margin="0,0,5,0" Click="AppConfigButton_Click">
+            <StackPanel>
+                <Image x:Name="image" RenderOptions.BitmapScalingMode="HighQuality" Height="30" Width="30" Source="../../Resources/Icons/Navigation/navigation_settings_white_border.png"/>
+            </StackPanel>
+        </Button>
+        <Popup x:Name="ConfigPopup" IsOpen="False" StaysOpen="False" PlacementTarget="{Binding ElementName=ConfigButton}" Placement="Top" AllowsTransparency="True">
+            <Border BorderBrush="#808080" BorderThickness="0.5" CornerRadius="5">
+                <StackPanel>
+                    <StackPanel.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#D8252525"/>
+                            <GradientStop Color="#D80D0D0D" Offset="1"/>
+                        </LinearGradientBrush>
+                    </StackPanel.Background>
+                    <uc:DropDownMenuItem x:Name="Option_Repair" Text="Repair" Icon="pack://application:,,,/Resources/Icons/Actions/action_repair_color.png" MouseDown="Repair_Click" Foreground="White" Margin="5 5 5 0"/>
+                    <uc:DropDownMenuItem x:Name="Option_ShowInExplorer" Text="Show in Explorer" Icon="pack://application:,,,/Resources/Icons/Navigation/navigation_explorer_color.png" MouseDown="ShowInExplorer_Click" Foreground="White" Margin="5 0 5 0"/>
+                    <uc:DropDownMenuItem x:Name="Option_GameSettings" Text="Game Settings" Icon="pack://application:,,,/Resources/Icons/Navigation/navigation_preferences_white.png" MouseDown="GameSettings_Click" Foreground="White" Margin="5,0,5,5"/>
+                    <uc:DropDownMenuItem x:Name="Option_LauncherSettings" Text="Launcher Settings" Icon="pack://application:,,,/Resources/Icons/Navigation/navigation_settings_white.png" MouseDown="LauncherSettings_Click" Foreground="White" Margin="5 0 5 0"/>
+
+                </StackPanel>
+            </Border>
+        </Popup>
+    </Grid>
+</UserControl>

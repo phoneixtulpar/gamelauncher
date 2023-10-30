@@ -1,0 +1,3 @@
+If you want to update this DLL using Visual Studio
+
+Please publish it on Visual Studio using .NET 4.8 otherwise Unity will reject it.

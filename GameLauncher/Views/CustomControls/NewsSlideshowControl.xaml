@@ -1,0 +1,133 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GameLauncher.Controls"
+             xmlns:GameLauncher="clr-namespace:GameLauncher" 
+            x:Class="GameLauncher.Controls.NewsSlideshowControl"
+            xmlns:wpf="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+
+             mc:Ignorable="d" 
+             d:DesignWidth="1524" d:DesignHeight="378">
+    <StackPanel Margin="0,0,0,10">
+
+        <Grid x:Name="Content_Superior" Height="338" Width="Auto" Margin="0,0,0,10">
+
+            <Rectangle x:Name="Background" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="3" Fill="#19FFFFFF" RadiusX="10" RadiusY="10"/>
+            <Grid x:Name="News_Video" HorizontalAlignment="Left" Height="Auto" Background="#00000000" Width="601">
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="8" Opacity="0.25" Color="White" Direction="0" ShadowDepth="5"/>
+                </Grid.Effect>
+                <Grid.OpacityMask>
+                    <VisualBrush Visual="{Binding ElementName=clipMask}" Stretch="None" />
+                </Grid.OpacityMask>
+
+                <Border x:Name="clipMask" CornerRadius="10" Background="Black" />
+                <!--<Image x:Name="imageElement" HorizontalAlignment="Stretch" Visibility="Visible" StretchDirection="Both" Stretch="UniformToFill" Source="/Views/CustomControls/Game Launcher - 2K Full Logo with Background.png" Width="601" Height="Auto"/>-->
+                <wpf:WebView2 x:Name="WebView" Height="338" Width="Auto" Visibility="Collapsed" NavigationCompleted="WebView_NavigationCompleted"/>
+
+                <Rectangle x:Name="imageElement" RadiusX="10" RadiusY="10" Opacity="1">
+                    <Rectangle.Effect>
+                        <DropShadowEffect BlurRadius="10" Opacity="0.5" Direction="-90"/>
+                    </Rectangle.Effect>
+                    <Rectangle.Fill>
+                        <ImageBrush x:Name="Image" Stretch="UniformToFill"/>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Grid>
+            <StackPanel x:Name="stackPanel" Margin="620,20,20,12" Orientation="Vertical">
+                <TextBlock x:Name="News_Header" TextWrapping="Wrap" FontSize="16" Foreground="#B1B1B1" FontWeight="Regular" FontFamily="Fonts/#Monserrat" Text="LASTEST NEWS" Margin="0,0,0,5"/>
+                <TextBlock x:Name="News_Actual_Title" TextWrapping="Wrap" FontSize="30" Foreground="White" FontWeight="Bold" FontFamily="Fonts/#Monserrat" Text="PATCH 1.0.0"/>
+                <TextBlock x:Name="News_Actual_SubTitle" TextWrapping="Wrap" FontSize="16" Foreground="#FF24FF00" FontWeight="Bold" FontFamily="Fonts/#Monserrat" Text="NOW AVAILABLE" Margin="0,0,0,5"/>
+                <TextBlock x:Name="News_Actual_Date" TextWrapping="Wrap" FontSize="14" Foreground="#FFCFCFCF" FontWeight="Bold" FontFamily="Fonts/#Monserrat" Text="14/06/22" Margin="0,0,0,5"/>
+                <Rectangle x:Name="News_LineSeparation" Height="1" Stroke="White" Margin="0,0,0,15"/>
+                <StackPanel x:Name="News_Description_Container" Orientation="Vertical">
+                    <GameLauncher:FadingScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" FadedEdgeThickness="20" FadedEdgeOpacity="0" FadedEdgeFalloffSpeed="4" Height="143" Visibility="Visible">
+                        <GameLauncher:FadingScrollViewer.Template>
+                            <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                                <Grid x:Name="Grid" Background="{TemplateBinding Background}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Border x:Name="PART_ScrollContentPresenterContainer">
+                                        <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" CanHorizontallyScroll="False" CanVerticallyScroll="False" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Grid.Column="0" Margin="{TemplateBinding Padding}" Grid.Row="0"/>
+                                    </Border>
+
+                                    <ScrollBar x:Name="PART_VerticalScrollBar" AutomationProperties.AutomationId="VerticalScrollBar" Cursor="Arrow" Grid.Column="1" Maximum="{TemplateBinding ScrollableHeight}" Minimum="0" Grid.Row="0" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportHeight}"/>
+                                    <ScrollBar x:Name="PART_HorizontalScrollBar" AutomationProperties.AutomationId="HorizontalScrollBar" Cursor="Arrow" Grid.Column="0" Maximum="{TemplateBinding ScrollableWidth}" Minimum="0" Orientation="Horizontal" Grid.Row="1" Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}" Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportWidth}"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </GameLauncher:FadingScrollViewer.Template>
+
+                        <TextBlock x:Name="News_Actual_Content"  TextWrapping="Wrap" FontSize="14" Foreground="White" FontFamily="Fonts/#Monserrat" FontWeight="Regular" TextTrimming="CharacterEllipsis" LineStackingStrategy="MaxHeight"><Run Text="THE CONTENT/IMAGES/VIDEO OF THESE ELEMENTS ARE GOT FROM HOST IN RUNTIME."/><LineBreak/><Run Text="Binary Diff updates"/><LineBreak/><Run Text="News/Feed and Alerts"/><LineBreak/><Run/><LineBreak/><Run Text="Multi-Language support"/><LineBreak/><Run/><LineBreak/><Run Text="And much more features, get more info!"/></TextBlock>
+                    </GameLauncher:FadingScrollViewer>
+                    <Grid Height="35">
+                        <Button x:Name = "News_Button" ToolTip="Open external link" Cursor="Hand" RenderTransformOrigin="0.5,0.5" BorderThickness="2,2,2,2" Width="Auto" Height="NaN" Style="{DynamicResource NormalButtonStyle}" Click="News_Button_Click">
+                            <Button.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Button.RenderTransform>
+                            <StackPanel>
+                                <TextBlock x:Name="News_Button_Content"
+                                    Text="More info..."
+                                    Foreground="White" 
+                                    FontFamily="Fonts/#Fredoka"
+                                    FontWeight="Bold"
+                    
+                                    FontSize="14"/>
+                            </StackPanel>
+
+                        </Button>
+
+                    </Grid>
+
+                </StackPanel>
+
+            </StackPanel>
+
+        </Grid>
+        <Grid>
+            <StackPanel x:Name="SlideShow_Content" Orientation="Horizontal" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button x:Name="SlideShow_Button" Style="{DynamicResource NormalButtonStyle}" Width="20" Height="20" Background="{x:Null}" Margin="0,0,10,0">
+                    <StackPanel HorizontalAlignment="Stretch">
+                        <Image x:Name="SlideShow_Button_Image" RenderOptions.BitmapScalingMode="HighQuality" Source="/Resources/Icons/Actions/action_play_white.png" ToolTip="Play/Pause slideshow" Style="{DynamicResource MenuIcon}">
+                            <Image.Effect>
+                                <DropShadowEffect Direction="-90" ShadowDepth="2" BlurRadius="4" Opacity="0.5"/>
+                            </Image.Effect>
+                        </Image>
+                    </StackPanel>
+                </Button>
+                <StackPanel x:Name="SlideShow_MiniButtonList" Orientation="Horizontal">
+                    <Rectangle Style="{DynamicResource SlideShowButtonsStyle}" x:Name="SlideShow_News1" Width="100" Fill="#FF0085FF" RadiusX="10" RadiusY="10" Height="15" Margin="0,0,5,0">
+                        <Rectangle.Effect>
+                            <DropShadowEffect Direction="-90" ShadowDepth="2" BlurRadius="4" Opacity="0.5"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Rectangle x:Name="SlideShow_News2" Width="100" Fill="#FFA4A4A4" RadiusX="10" RadiusY="10" Height="15" Margin="0,0,5,0" Style="{DynamicResource SlideShowButtonsStyle}">
+                        <Rectangle.Effect>
+                            <DropShadowEffect Direction="-90" ShadowDepth="2" BlurRadius="4" Opacity="0.5"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Rectangle x:Name="SlideShow_News3" Width="100" OpacityMask="Black" Fill="#FFA4A4A4" RadiusX="10" RadiusY="10" Height="15" Margin="0,0,5,0" Style="{DynamicResource SlideShowButtonsStyle}">
+                        <Rectangle.Effect>
+                            <DropShadowEffect Direction="-90" ShadowDepth="2" BlurRadius="4" Opacity="0.5"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                </StackPanel>
+            </StackPanel>
+
+        </Grid>
+
+    </StackPanel>
+</UserControl>

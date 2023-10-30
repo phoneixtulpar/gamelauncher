@@ -1,0 +1,20 @@
+Asset is governed by the Asset Store EULA; however, the following components are governed by the licenses indicated below:
+
+Files under Editor/Resources folder
+    Editor/Resources/Background.png
+        MIT license
+
+Files under Installation folder
+
+    Installation/GameLauncher.zip or Installation/GameLauncherFull.zip
+        - Images and Icons - Flaticon License
+
+            Icons made by Freepik from www.flaticon.com
+            https://www.flaticon.com/
+
+        - Fonts
+            Dosis
+                SIL Open Font License
+            Fredoka
+                SIL Open Font License
+                
